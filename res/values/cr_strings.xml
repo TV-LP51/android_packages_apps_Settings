@@ -25,6 +25,8 @@
     <string name="ok">Ok</string>
     <string name="dialog_restart">Restart</string>
     <string name="dialog_cancel">Cancel</string>
+    <string name="default_string">Default</string>
+    <string name="help">Help</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="extras_temasek_settings">Temasek Extras</string>
 
@@ -827,6 +829,12 @@
     <string name="shortcuts_icon_picker_tv">TV</string>
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Unlock</string>
+
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
 
 </resources>
 
