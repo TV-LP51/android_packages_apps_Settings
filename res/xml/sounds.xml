@@ -55,6 +55,12 @@
                 android:title="@string/notification_volume_option_title"
                 settings:advanced="true"/>
 
+	<!-- Volume steps -->
+	<PreferenceScreen
+		android:key="volume_steps"
+		android:fragment="com.android.settings.validus.VolumeSteps"
+		android:title="@string/volume_steps_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
