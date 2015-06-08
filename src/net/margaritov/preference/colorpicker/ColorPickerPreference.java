@@ -18,9 +18,13 @@
 package net.margaritov.preference.colorpicker;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -40,6 +44,7 @@ public class ColorPickerPreference extends Preference implements
         Preference.OnPreferenceClickListener, ColorPickerDialog.OnColorChangedListener {
 
     View mView;
+    ColorPickerDialog mDialog;
     LinearLayout widgetFrameView;
     int mDefaultValue = Color.BLACK;
     private int mValue = Color.BLACK;
