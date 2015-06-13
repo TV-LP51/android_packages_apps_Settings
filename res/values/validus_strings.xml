@@ -218,5 +218,9 @@
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+
+    <!-- OpenDelta  -->
+    <public type="string" name="system_update_settings_list_item_title" id="0x7f0c06d7" />
+    <public type="string" name="system_update_settings_list_item_summary" id="0x7f0c06d8" />
 	
 </resources>
