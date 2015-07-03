@@ -17,6 +17,8 @@ package com.android.settings.profiles.triggers;
 
 import android.app.AlertDialog;
 import android.app.ListFragment;
+import android.app.Profile;
+import android.app.ProfileManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
@@ -33,11 +35,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import cyanogenmod.app.Profile;
-import cyanogenmod.app.ProfileManager;
-
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.profiles.ProfilesSettings;
 
 import java.util.ArrayList;
@@ -74,7 +73,7 @@ public class BluetoothTriggerFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mProfileManager = ProfileManager.getInstance(getActivity());
+        mProfileManager = (ProfileManager) getActivity().getSystemService(Context.PROFILE_SERVICE);
         if (getArguments() != null) {
             mProfile = getArguments().getParcelable(ProfilesSettings.EXTRA_PROFILE);
         }

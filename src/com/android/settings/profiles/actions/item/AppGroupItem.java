@@ -16,16 +16,14 @@
 package com.android.settings.profiles.actions.item;
 
 import android.app.NotificationGroup;
+import android.app.Profile;
+import android.app.ProfileGroup;
+import android.app.ProfileManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import cyanogenmod.app.Profile;
-import cyanogenmod.app.ProfileGroup;
-import cyanogenmod.app.ProfileManager;
-
 import com.android.settings.R;
 import com.android.settings.profiles.actions.ItemListAdapter;
 
@@ -34,19 +32,17 @@ import java.util.UUID;
 public class AppGroupItem implements Item {
     Profile mProfile;
     ProfileGroup mGroup;
-    NotificationGroup mNotifGroup;
 
     public AppGroupItem() {
         // empty app group will act as a "Add/remove app groups" item
     }
 
-    public AppGroupItem(Profile profile, ProfileGroup group, NotificationGroup nGroup) {
+    public AppGroupItem(Profile profile, ProfileGroup group) {
         mProfile = profile;
         if (group == null) {
             throw new UnsupportedOperationException("profile group can't be null");
         }
         mGroup = group;
-        mNotifGroup = nGroup;
     }
 
     @Override
@@ -74,12 +70,17 @@ public class AppGroupItem implements Item {
         } else {
             view = convertView;
         }
+
+        ProfileManager profileManager = (ProfileManager) parent.getContext()
+                .getSystemService(Context.PROFILE_SERVICE);
+
         TextView text = (TextView) view.findViewById(R.id.title);
         TextView desc = (TextView) view.findViewById(R.id.summary);
 
         if (mGroup != null) {
-            if (mNotifGroup != null) {
-                text.setText(mNotifGroup.getName());
+            NotificationGroup notifGroup = profileManager.getNotificationGroup(mGroup.getUuid());
+            if (notifGroup != null) {
+                text.setText(notifGroup.getName());
             } else {
                 text.setText("<unknown>");
             }

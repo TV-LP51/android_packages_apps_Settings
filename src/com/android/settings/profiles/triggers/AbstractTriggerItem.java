@@ -15,7 +15,7 @@
  */
 package com.android.settings.profiles.triggers;
 
-import cyanogenmod.app.Profile;
+import android.app.Profile;
 
 
 public class AbstractTriggerItem {

@@ -19,6 +19,8 @@ package com.android.settings.profiles;
 import java.util.UUID;
 
 import android.app.Activity;
+import android.app.Profile;
+import android.app.ProfileManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,9 +31,6 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.Settings;
 import android.widget.Toast;
-
-import cyanogenmod.app.Profile;
-import cyanogenmod.app.ProfileManager;
 
 import com.android.settings.R;
 
@@ -54,7 +53,7 @@ public class NFCProfile extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mProfileManager = ProfileManager.getInstance(this);
+        mProfileManager = (ProfileManager) getSystemService(Context.PROFILE_SERVICE);
     }
 
     @Override

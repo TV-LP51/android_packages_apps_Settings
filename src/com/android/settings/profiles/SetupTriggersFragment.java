@@ -18,6 +18,8 @@ package com.android.settings.profiles;
 import android.annotation.Nullable;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Profile;
+import android.app.ProfileManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -28,10 +30,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import cyanogenmod.app.Profile;
-import cyanogenmod.app.ProfileManager;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.SubSettings;
@@ -72,7 +70,7 @@ public class SetupTriggersFragment extends SettingsPreferenceFragment {
             mNewProfileMode = getArguments().getBoolean(ProfilesSettings.EXTRA_NEW_PROFILE, false);
             mPreselectedItem = getArguments().getInt(EXTRA_INITIAL_PAGE, 0);
         }
-        mProfileManager = ProfileManager.getInstance(getActivity());
+        mProfileManager = (ProfileManager) getActivity().getSystemService(Context.PROFILE_SERVICE);
     }
 
     @Override

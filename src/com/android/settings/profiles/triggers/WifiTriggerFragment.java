@@ -17,6 +17,8 @@ package com.android.settings.profiles.triggers;
 
 import android.app.AlertDialog;
 import android.app.ListFragment;
+import android.app.Profile;
+import android.app.ProfileManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,13 +31,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import cyanogenmod.app.Profile;
-import cyanogenmod.app.ProfileManager;
-
 import com.android.settings.R;
 import com.android.settings.profiles.ProfilesSettings;
 
@@ -74,7 +73,7 @@ public class WifiTriggerFragment extends ListFragment {
         } else {
             throw new UnsupportedOperationException("no profile!");
         }
-        mProfileManager = ProfileManager.getInstance(getActivity());
+        mProfileManager = (ProfileManager) getActivity().getSystemService(Context.PROFILE_SERVICE);
         mWifiManager = (WifiManager) getActivity().getSystemService(Context.WIFI_SERVICE);
     }
 
