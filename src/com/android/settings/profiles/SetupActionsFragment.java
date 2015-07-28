@@ -24,6 +24,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.app.NotificationGroup;
 import android.app.Profile;
+import cyanogenmod.profiles.LockSettings;
 import android.app.ProfileGroup;
 import android.app.ProfileManager;
 import android.app.RingModeSettings;
@@ -588,7 +589,7 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
 
         int defaultIndex = 0; // no action
         for (int i = 0; i < LOCKMODE_MAPPING.length; i++) {
-            if (LOCKMODE_MAPPING[i] == mProfile.getScreenLockMode()) {
+            if (LOCKMODE_MAPPING[i] == mProfile.getScreenLockMode().getValue()) {
                 defaultIndex = i;
                 break;
             }
@@ -599,7 +600,7 @@ public class SetupActionsFragment extends SettingsPreferenceFragment
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
-                        mProfile.setScreenLockMode(LOCKMODE_MAPPING[item]);
+                        mProfile.setScreenLockMode(new LockSettings(LOCKMODE_MAPPING[item]));
                         updateProfile();
                         mAdapter.notifyDataSetChanged();
                         dialog.dismiss();
