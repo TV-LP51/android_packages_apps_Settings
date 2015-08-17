@@ -18,6 +18,7 @@
 	
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
+    <string name="validus_performance_settings">Kernel Adiutor</string>
 
     <!-- The Void  -->
     <string name="header_category_thevoid">Excision</string>

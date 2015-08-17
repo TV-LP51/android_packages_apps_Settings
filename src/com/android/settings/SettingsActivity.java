@@ -1191,7 +1191,7 @@ public class SettingsActivity extends Activity
     private void updateTilesList(List<DashboardCategory> target) {
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
-                android.os.Build.TYPE.equals("eng"));
+                android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug"));
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
         final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -1291,7 +1291,17 @@ public class SettingsActivity extends Activity
                     }
                     if (!supported) {
                         removeTile = true;
-                    }					
+                    }	
+               } else if (id == R.id.kernel_auditor) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.grarak.kerneladiutor", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }				
                 }
 
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0

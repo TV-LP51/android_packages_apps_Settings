@@ -131,6 +131,17 @@
 
     </dashboard-category>
 
+        <!-- Kernel Auditor App -->
+        <dashboard-tile
+                android:id="@+id/kernel_auditor"
+                android:icon="@drawable/ic_tesla_performance"
+                android:title="@string/validus_performance_settings">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.grarak.kerneladiutor"
+                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </dashboard-tile>
+
     <!-- Personalization -->
     <dashboard-category
             android:id="@+id/personal_section"
