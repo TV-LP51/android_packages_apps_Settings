@@ -78,11 +78,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINGERPRINT_SERVICE" />
     <uses-permission android:name="com.cyngn.stats.SEND_ANALYTICS" />
 
+<<<<<<< HEAD
     <permission
         android:name="cyanogenmod.permission.PROTECTED_APP"
         android:protectionLevel="signatureOrSystem" />
 
+    <!-- Anti-piracy support -->
+=======
     <!-- ContentGuard support -->
+>>>>>>> 5743b2f... refactor antipiracy beta
     <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
