@@ -930,7 +930,8 @@
     <string name="select_custom_activity_title">Select custom activity</string>
 
     <!-- Performance settings -->
-    <string name="performance_settings_title">Performance</string>
+    <string name="performance_settings_title">Device performance</string>
+    <string name="validus_kernel_settings">Kernel adiutor </string>
 
     <!-- Performance Settings : I/O scheduler settings title -->
     <string name="io_scheds_title">I/O scheduler</string>

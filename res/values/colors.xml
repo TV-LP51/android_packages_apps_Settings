@@ -74,7 +74,7 @@
     <color name="theme_accent">#cc0033</color>
 
     <color name="dashboard_category_bg">#FF000000</color>
-    <color name="dashboard_background_color">#ff242424</color>
+    <color name="dashboard_background_color">#aacc0033</color>
     <color name="switchbar_background_color">#ff23282E</color>
     <color name="switch_accent_color">@color/theme_accent</color>
 
